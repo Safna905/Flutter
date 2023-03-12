@@ -21,8 +21,10 @@ class _CheckboxListTilepageState extends State<CheckboxListTilepage> {
       appBar: AppBar(
         title: Text('CheckBox ListTile Demo',
         style: TextStyle(
-          fontWeight: FontWeight.bold
+          fontWeight: FontWeight.bold,
+          color: Colors.black
         ),),
+        backgroundColor: Colors.white,
         centerTitle: true,
       ),
 
@@ -32,9 +34,10 @@ class _CheckboxListTilepageState extends State<CheckboxListTilepage> {
               value:and ,
               onChanged: (val) {
                 setState(() {
-                  and = val;
+                  and = val!;
                 });
               },
+            secondary: Image.network('https://cdn.icon-icons.com/icons2/2235/PNG/512/android_os_logo_icon_134673.png'),
             title: Text('Android',
             style: TextStyle(
               fontWeight: FontWeight.bold
@@ -45,9 +48,11 @@ class _CheckboxListTilepageState extends State<CheckboxListTilepage> {
             value:flu ,
             onChanged: (val) {
               setState(() {
-                flu =val;
+                flu =val!;
               });
             },
+            secondary: Image.network('https://pixlok.com/wp-content/uploads/2021/05/flutter-logo-768x768.jpg',
+            scale: 1,),
             title: Text('Flutter',
               style: TextStyle(
                   fontWeight: FontWeight.bold
@@ -58,9 +63,10 @@ class _CheckboxListTilepageState extends State<CheckboxListTilepage> {
             value:ios ,
             onChanged: (val) {
               setState(() {
-                ios = val;
+                ios = val!;
               });
             },
+            secondary: Image.network('https://www.pngkit.com/png/detail/32-326147_ios-logo-png-transparent-background.png',),
             title: Text('iOS',
               style: TextStyle(
                   fontWeight: FontWeight.bold
@@ -71,8 +77,9 @@ class _CheckboxListTilepageState extends State<CheckboxListTilepage> {
             value:php ,
             onChanged: (val) {
               setState(() {
-              php = val;
+              php = val!;
             });},
+            secondary: Image.network('https://banner2.cleanpng.com/20180427/zaq/kisspng-web-development-php-programming-language-computer-5ae381e5d40ec8.1931377315248593658686.jpg',),
             title: Text('PHP',
               style: TextStyle(
                   fontWeight: FontWeight.bold
@@ -83,9 +90,10 @@ class _CheckboxListTilepageState extends State<CheckboxListTilepage> {
             value:node ,
             onChanged: (val) {
               setState(() {
-                node = val;
+                node = val!;
               });
             },
+            secondary: Image.network('https://www.pngfind.com/pngs/m/683-6833893_node-js-logo-png-transparent-png.png',),
             title: Text('Node',
               style: TextStyle(
                   fontWeight: FontWeight.bold
