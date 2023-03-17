@@ -1,16 +1,40 @@
-import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:flutter/material.dart';
 
+
+import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import 'Screens/AnimatedSplashScreen.dart';
 import 'Screens/ListTile.dart';
 import 'Screens/ListTileBuilder.dart';
+import 'Screens/SimpleListView.dart';
 import 'Screens/SplashScreen.dart';
+import 'Screens/Stack1.dart';
+import 'Screens/Stack2.dart';
+import 'Screens/Stack3.dart';
+import 'Screens/Stack4.dart';
+import 'Screens/StackOverflow.dart';
+import 'Screens/WorldCities.dart';
+import 'Screens/catalog.dart';
+import 'Screens/checkboclisttile.dart';
+import 'Screens/onboardscreen.dart';
+import 'Screens/simpleContactList.dart';
 import 'Screens/starReviews.dart';
 
-void main () {
-  runApp( MyApp());
+ main() async {
+
+   final prefs = await SharedPreferences.getInstance();
+   final showHome = prefs.getBool('showHome') ?? false;
+
+  runApp( MyApp( showHome : showHome));
 }
 
 class MyApp extends StatelessWidget {
+   final bool showHome;
+
+  const MyApp({
+    super.key,
+    required this.showHome});
+
 
   @override
   Widget build(BuildContext context) {
@@ -18,32 +42,15 @@ class MyApp extends StatelessWidget {
 
       title: 'MyFlutterApp',
       theme: ThemeData(
-        primarySwatch: Colors.pink,
+        primarySwatch: Colors.teal,
       ),
       debugShowCheckedModeBanner: false,
       // home: StarRatingPage(
       //   title : 'Star Rating'
       // ),
-      home: AnimatedSplashScreen(
-        splash:Container(
-          child: Image.network("https://img.icons8.com/color/200w/flutter.png",
-        ),
-      ),
-        duration: 3000,
-
-        // bottomNavigationBar: Container(
-        //   color: Colors.black,
-        //   child: Text('Flutter App',
-        //     style: TextStyle(
-        //         fontWeight: FontWeight.bold,
-        //         fontSize: 45,
-        //         color: Colors.white
-        //     ),),
-        // ),
-        nextScreen: ListTilePage(),
-        splashTransition: SplashTransition.fadeTransition,
-      ),
-
+      home:showHome ? CitiesPage() : OnboardingPage()
+      // CatalogPage(),
+      // CheckboxListTilepage()
     );
   }
 }
