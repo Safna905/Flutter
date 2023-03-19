@@ -18,11 +18,9 @@ class _SimpleCalculatorState extends State<SimpleCalculator> {
         style: ElevatedButton.styleFrom(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(0.0),
-                side: BorderSide(
+                side: const BorderSide(
                     color: Colors.white, width: 1, style: BorderStyle.solid))),
-        onPressed: () {
-          return buttonPressed(buttonText);
-        },
+        onPressed: () => buttonPressed(buttonText),
         child: Text(
           buttonText,
           style: TextStyle(
