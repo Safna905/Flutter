@@ -23,7 +23,7 @@ class _SimpleCalculatorState extends State<SimpleCalculator> {
         onPressed: () => buttonPressed(buttonText),
         child: Text(
           buttonText,
-          style: TextStyle(
+          style: const TextStyle(
               fontSize: 30.0,
               fontWeight: FontWeight.normal,
               color: Colors.white),
@@ -46,7 +46,7 @@ class _SimpleCalculatorState extends State<SimpleCalculator> {
         children: [
           Container(
             alignment: Alignment.centerRight,
-            padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
+            padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
             child: Text(
               equation,
               style: TextStyle(fontSize: equationFontSize),
